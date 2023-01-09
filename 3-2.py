@@ -16,4 +16,3 @@ y = M % (K+1)
 
 result = (first * (x*K + y)) + (second * x)
 print(result)
-print(x, y, first, second)
