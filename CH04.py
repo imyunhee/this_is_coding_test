@@ -27,6 +27,24 @@ for moving in plans:
 
 print(X, Y)
 
+n = int(input())
+x, y = 1, 1
+plans = input().split()
+
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types = ['L', 'R', 'U', 'D']
+
+for plan in plans:
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+    if nx < 1 or ny < 1 or nx > n or ny > n:
+        continue
+    x, y = nx, ny
+
+print(x, y)
 ### 시간복잡도 = O(N), N = 이동 횟수
 
 
@@ -51,3 +69,26 @@ for i in range (h+1): #시
                 count += 1
 
 print(count)
+
+# 실전 문제 4-2. 왕실의 나이트 ** 다시 풀어볼 문제
+input_data = input()
+
+row = int(input_data[1])
+column = int(ord(input_data[0])) - int(ord('a')) + 1 #ord(문자) -> 유니코드 정수를 반환
+steps = [(-2,-1), (-2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2), (2, -1), (2, 1)]
+
+result = 0
+for step in steps:
+    next_row = row + step[0]
+    next_col = column + step[1]
+    if next_row < 1 or next_row > 8 or next_col < 1 or next_col > 8:
+        continue
+    result += 1
+    """
+    if next_row >= 1 and next_row <= 8 and next_col >= 1 and next_col <= 8:
+        result += 1
+    """
+print(result)
+
+# 실전 문제 4-3. 게임 개발
+
