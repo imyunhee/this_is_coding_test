@@ -94,4 +94,6 @@ for step in steps:
 print(result)
 
 # 실전 문제 4-3. 게임 개발
-
+"""
+아직 나에게는 어려워서 pass. 다음에 풀어보자 ~
+"""
