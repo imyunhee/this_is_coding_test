@@ -60,3 +60,61 @@ def factorial_recursive(n):
     return n * factorial_recursive(n-1)
 
 print('재귀적으로 구현:', factorial_recursive(5))
+
+# DFS 예제
+def dfs(graph, v, visited):
+    visited[v] = True
+    print(v, end=' ')
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+graph = [           #인접 리스트 방식(연결된 정보만 저장)
+    [],
+    [2,3,8],
+    [1,7],
+    [1,4,5],
+    [3,5],
+    [3,4],
+    [7],
+    [2,6,8],
+    [1,7]
+]
+
+visited = [False] * 9
+
+dfs(graph, 1, visited)
+
+# BFS 예제
+from collections import deque
+
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        print(v, end=' ')
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+
+graph = [           #인접 리스트 방식(연결된 정보만 저장)
+    [],
+    [2,3,8],
+    [1,7],
+    [1,4,5],
+    [3,5],
+    [3,4],
+    [7],
+    [2,6,8],
+    [1,7]
+]
+
+visited = [False] * 9
+bfs(graph, 1, visited)
+
+#실전 문제 5-3. 음료수 얼려 먹기
+## 얼음 틀의 형태가 주어졌을 때, 총 만들 수 있는 아이스크림의 개수를 구하여라.
+
+
