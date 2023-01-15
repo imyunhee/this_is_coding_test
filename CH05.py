@@ -116,5 +116,9 @@ bfs(graph, 1, visited)
 
 #실전 문제 5-3. 음료수 얼려 먹기
 ## 얼음 틀의 형태가 주어졌을 때, 총 만들 수 있는 아이스크림의 개수를 구하여라.
+N, M = map(int, input().split())
+graph = []
+for i in range(N):
+    graph.append(list(map(int, input())))
 
-
+# 실전 문제 5-4. 미로 탈출
